@@ -1,5 +1,5 @@
 
- const url = 'http://localhost:3080/dev'
+ const url = 'http://localhost:3080'
 export const apiUrl = url;
 export const headers = {
     Accept: "application/json",
