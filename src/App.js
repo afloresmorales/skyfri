@@ -17,8 +17,8 @@ function App() {
   const formRef = useRef(null);
   const [index, setIndex] = useState(0);
   const [
-    registerNewAgreement, // This is the mutation trigger
-    { isLoading }, // This is the destructured mutation result
+    registerNewAgreement,
+    { isLoading },
   ] = useRegisterNewAgreementMutation();
   const onSubmit = () => {
     formRef?.current?.submitForm();
@@ -39,6 +39,8 @@ function App() {
         subsidiary: yup.string().required('Field is required'),
         payment: yup.string().required('Field is required'),
         client: yup.string().required('Field is required'),
+        startDate: yup.string().required('Field is required'),
+        endDate: yup.string().required('Field is required'),
       }),
     [],
   );

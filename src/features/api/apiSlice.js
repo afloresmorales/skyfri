@@ -1,5 +1,6 @@
 // Import the RTK Query methods from the React-specific entry point
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
 import { apiUrl } from '../config';
 // Define our single API slice object
 export const apiSlice = createApi({
@@ -38,13 +39,12 @@ export const apiSlice = createApi({
     //     }
     //   }),
     registerNewAgreement: builder.mutation({
-    query: agreement => {
-        console.log({agreement})
-       return { url: '/agreements',
+    query: agreement => ({
+        url: '/agreements',
         method: 'POST',
         // Include the entire post object as the body of the request
-        body: agreement}
-    }
+        body: agreement
+    })
     })
   })
 })
